@@ -70,11 +70,13 @@ export default {
 
           const slot = this.$refs.slots[i]
           const choice = Math.floor( Math.random() * data.items.length )
-          console.log("choice", i, data.items[choice])
+          const isMiddle = Math.random() >= 0.5
+          console.log("choice", i, data.items[choice], isMiddle)
+          const finalPos = choice * 180 + (isMiddle ? 90 : 0)
 
           const opts = {
             el: slot.querySelector('.slot__wrap'),
-            finalPos: choice * 180,
+            finalPos: finalPos,
             startOffset: 2000 + Math.random() * 500 + i * 500,
             height: data.items.length * 180,
             duration: 3000 + i * 700, // milliseconds
