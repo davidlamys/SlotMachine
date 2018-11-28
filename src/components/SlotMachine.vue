@@ -141,7 +141,7 @@ export default {
 .slot__window {
   background-color: green;
   width: 200px;
-  height: 200px;
+  height: 380px;
   overflow: hidden;
 }
 
