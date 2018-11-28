@@ -5,12 +5,10 @@
       start
     </button>
     <div class='slot' v-for='slot in slots' ref='slots'>
-      <h2>{{ slot.title }}</h2>
       <div class='slot__window'>
         <div class='slot__wrap'>
           <div class='slot__item' v-for='opt in slot.items'>{{ opt }}</div>
-          <div class='slot__item slot__item--copy' >{{ slot.items[0] }}
-          </div>
+          <div class='slot__item slot__item--copy' >{{ slot.items[0] }}</div>
         </div>
       </div>
     </div>
@@ -30,7 +28,6 @@ export default {
   data() {
     return {
       slots: [{
-        title: "When",
         items: [
           "today",
           "next week",
@@ -39,7 +36,6 @@ export default {
           "yesterday",
         ]
       }, {
-        title: "Where",
         items: [
           "at home",
           "at work",
@@ -51,7 +47,6 @@ export default {
           "at the city",
         ]
       }, {
-        title: "How",
         items: [
           "cycling",
           "walking",
