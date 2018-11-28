@@ -25,6 +25,12 @@ function(cb) { window.setTimeout(cb, 1000/60) }
 
 export default {
   name: 'SlotMachine',
+  props: {
+    "isRandom": Boolean,
+    "slot1": String,
+    "slot2": String,
+    "slot3": String
+  },
   data() {
     return {
       slots: [{
@@ -67,10 +73,12 @@ export default {
       this.opts = this.slots.map( (data, i) => {
 
         const slot = this.$refs.slots[i]
-        const choice = Math.floor( Math.random() * data.items.length )
+        const debugChoice = i == 0 ? this.slot1 : (i == 1 ? this.slot2 : this.slot3)
+        const randomChoice = Math.floor( Math.random() * data.items.length )
+        const choice = this.isRandom ? randomChoice : debugChoice
         const isMiddle = Math.random() >= 0.5
-        console.log("choice", i, data.items[choice], isMiddle)
-        const finalPos = choice * 180 + (isMiddle ? 90 : 0)
+        console.log("choice", choice, data.items[choice], isMiddle)
+        const finalPos = choice * 180 - (isMiddle ? 90 : 0)
 
         const opts = {
           el: slot.querySelector('.slot__wrap'),
