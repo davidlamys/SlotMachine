@@ -29,35 +29,33 @@ export default {
     return {
       slots: [{
         items: [
-          "today",
-          "next week",
-          "last year",
-          "tomorrow",
-          "yesterday",
+          "3xBAR",
+          "BAR",
+          "2xBAR",
+          "7",
+          "CHERRY"
         ]
       }, {
         items: [
-          "at home",
-          "at work",
-          "at school",
-          "at the gym",
-          "at the park",
-          "at the beach",
-          "at the sidewalk",
-          "at the city",
+          "3xBAR",
+          "BAR",
+          "2xBAR",
+          "7",
+          "CHERRY"
         ]
       }, {
         items: [
-          "cycling",
-          "walking",
-          "swimming",
-          "flying",
           ]
         }],
         opts: null,
         startedAt: null,
       }
     },
+          "3xBAR",
+          "BAR",
+          "2xBAR",
+          "7",
+          "CHERRY"
 
     methods: {
       start: function() {
